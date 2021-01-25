@@ -42,6 +42,7 @@ export default function Register() {
                 setIsError(true);
             })
     }
+
     return (
         <div className="container">
             <div className="row">

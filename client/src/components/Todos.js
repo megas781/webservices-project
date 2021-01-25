@@ -119,7 +119,7 @@ export default function Todos() {
                                     toggleTodo(todo.id)
                                 }}
                                 href="/#"
-                                className="card-action-text white-text">{todo.checked ? 'Завершить' : 'Завершено'}</a>
+                                className="card-action-text white-text">{todo.checked ? 'Завершить!' : 'Завершенный вагончик('}</a>
 
                             <a
                                 onClick={(e) => {
@@ -127,7 +127,7 @@ export default function Todos() {
                                     removeTodo(todo.id)
                                 }}
                                 href="/#"
-                                className="card-action-text white-text">Удалить
+                                className="card-action-text white-text">Удалить!
                             </a>
                         </div>
                     </div>
