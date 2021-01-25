@@ -45,7 +45,7 @@ export default function Register() {
     return (
         <div className="container">
             <div className="row">
-                <h1> Регистрация </h1>
+                <h1> Регайся! </h1>
             </div>
             <div className="row">
                 <form className="col s4 offset-s4">
@@ -76,10 +76,10 @@ export default function Register() {
                 disabled={!username.length || !password.length}
                 href="/#"
                 className="waves-effect waves-light btn"
-                onClick={register}>Заегрестрироваться</div>
+                onClick={register}>Зарегаться!</div>
             </div>
             <div className="row">
-                { isError && <strong style={{color: 'red'}}>  Ошибка регистрации </strong> }
+                { isError && <strong style={{color: 'red'}}> Што-та регистрация не хочет... Исправься!</strong> }
             </div>
         </div>
 )

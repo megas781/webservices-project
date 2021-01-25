@@ -10,10 +10,11 @@ export default function Home(){
 
     return (
         <div>
-            <h1>Привет  {credentials && credentials.username}!</h1>
+            <h1>Паровозик Ту-Ду!</h1>
+            <h3>{credentials && credentials.username}</h3>
             <div className="row">
-            {!credentials && <Link to="/register"  style={{'marginRight': 18}}className="waves-effect waves-light btn">Регистрация</Link>}
-            {!credentials && <Link to="/login" className="waves-effect waves-light btn">Вход</Link>}
+            {!credentials && <Link to="/register"  style={{'marginRight': 18}}className="btn green">Зарегаться</Link>}
+            {!credentials && <Link to="/login" className="btn green darken-2">Войти</Link>}
             </div>
             {credentials && <Todos />}
         </div>

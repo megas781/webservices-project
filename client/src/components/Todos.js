@@ -84,10 +84,31 @@ export default function Todos() {
     }, [])
 
     return (
+
         <div className="container">
+
+            <div className="row">
+                <div className="input-field col s9">
+                    <input
+                        onChange={changeHandler}
+                        value={todoText}
+                        placeholder="Добавь чё-ньть"
+                        id="first_name"
+                        type="text"
+                        className="validate"/>
+                </div>
+                <div className="input-field col s3">
+                    <div
+                        onClick={addTodo}
+                        disabled={!todoText.length}
+                        className="waves-effect waves-light btn orange">Добавить вагончик!
+                    </div>
+                </div>
+            </div>
+
             {todos.map((todo) => (
                 <div className="row" key={todo.id}>
-                    <div className={`card teal lighten-1 ${todo.checked ? 'card--active' : 'card--disabled'}`}>
+                    <div className={`card blue lighten-1 ${todo.checked ? 'card--active' : 'card--disabled'}`}>
                         <div className="card-content white-text">
                             <span className="card-title">{todo.text}</span>
                         </div>
@@ -98,7 +119,7 @@ export default function Todos() {
                                     toggleTodo(todo.id)
                                 }}
                                 href="/#"
-                                className="card-action-text">{todo.checked ? 'Завершить' : 'Завершено'}</a>
+                                className="card-action-text white-text">{todo.checked ? 'Завершить' : 'Завершено'}</a>
 
                             <a
                                 onClick={(e) => {
@@ -106,31 +127,14 @@ export default function Todos() {
                                     removeTodo(todo.id)
                                 }}
                                 href="/#"
-                                className="card-action-text">Удалить
+                                className="card-action-text white-text">Удалить
                             </a>
                         </div>
                     </div>
                 </div>
             ))}
 
-            <div className="row">
-                <div className="input-field col s9">
-                    <input
-                        onChange={changeHandler}
-                        value={todoText}
-                        placeholder="Купить молоко"
-                        id="first_name"
-                        type="text"
-                        className="validate"/>
-                </div>
-                <div className="input-field col s3">
-                    <div
-                        onClick={addTodo}
-                        disabled={!todoText.length}
-                        className="waves-effect waves-light btn">Добавить
-                    </div>
-                </div>
-            </div>
+
         </div>
     )
 }
